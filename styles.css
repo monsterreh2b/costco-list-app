@@ -254,9 +254,7 @@ Menu
 
   
   }
-  .section-center{
-    grid-template-columns: 1fr 1fr;
-  }
+ 
 }
 @media screen and (min-width: 1200px) {
   .section-center {
@@ -265,5 +263,11 @@ Menu
   }
   .photo {
     height: 150px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .section-center{
+    grid-template-columns: 1fr 1fr;
   }
 }
