@@ -269,6 +269,8 @@ Menu
 @media only screen and (max-width: 767px) {
   .section-center{
     grid-template-columns: 1fr 1fr;
+    position: relative;
+    right: 30px;
   }
 
   .menu-item {
