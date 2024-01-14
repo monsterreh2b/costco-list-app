@@ -271,7 +271,7 @@ Menu
     grid-template-columns: 1fr 1fr;
   }
 
-  .photo{
-    height:80px;
+  .menu-item {
+    width:100px;
   }
 }
