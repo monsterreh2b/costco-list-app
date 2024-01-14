@@ -251,6 +251,11 @@ Menu
   }
   .photo {
     height: 175px;
+
+  
+  }
+  .section-center{
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media screen and (min-width: 1200px) {
