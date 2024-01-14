@@ -270,4 +270,8 @@ Menu
   .section-center{
     grid-template-columns: 1fr 1fr;
   }
+
+  .photo{
+    height:80px;
+  }
 }
