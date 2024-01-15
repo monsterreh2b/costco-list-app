@@ -477,7 +477,7 @@ filterBtns.forEach(btn => {
     displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
     }
     else {
-      sectionCenter.innerHTML = "No items are picked. Please click 'Show All' and choose items!"
+      sectionCenter.innerHTML = `<p style="font-size:20pt;font-weight:bold;margin-left: 50%;">No items are picked. Please click 'Show All' and choose items!</p>`
 
 
     }
