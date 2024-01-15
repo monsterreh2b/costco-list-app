@@ -437,6 +437,7 @@ window.addEventListener("DOMContentLoaded", () => {
     item.addEventListener("click", (e) => {
     const target = e.currentTarget.getAttribute("alt");
     console.log(target);
+   e.currentTarget.classList.add("shimmer");
    menu.filter(item =>{
       console.log(item.title);
       if (item.title === target){
