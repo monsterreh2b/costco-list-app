@@ -383,6 +383,14 @@ const menu = [
     img: "./images/zpfz.png",
     desc: `zipfz`,
   },
+  {
+    id: 48,
+    title: "Banana",
+    status: "all",
+    price: 16.99,
+    img: "./images/bunch-bananas-isolated-on-white-600nw-1722111529.png",
+    desc: `banana`,
+  },
   
 ];
 
