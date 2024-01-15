@@ -402,7 +402,7 @@ function displayAMenu(menuItems) {
   const displayMenu = menuItems.map(item => {
     console.log(item);
     //removed price element after item title <h4 class="price">$${item.price}</h4>
-    return `<article class="menu-item"><img src="${item.img}" alt="${item.title}" class="photo" /><div class="item-info"><header><h4>${item.title}</h4></header><p class="item-text">${item.desc}</p></div></article>`
+    return `<article class="menu-item"><img src="${item.img}" alt="${item.title}" class="photo" /><div class="item-info"><header><h4>${item.title}</h4></header><p class="item-text">${item.desc}</p><a href="#quick">Top</a></div></article>`
   })
   console.log(displayMenu.join(""));
   sectionCenter.innerHTML = displayMenu.join("");
