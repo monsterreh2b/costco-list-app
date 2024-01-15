@@ -381,7 +381,7 @@ const menu = [
 const pickedArray = [];
 
 const sectionCenter = document.querySelector(".section-center");
-
+const messageArea = document.querySelector(".message");
 const filterBtns = document.querySelectorAll(".filter-btn");
 console.log(filterBtns);
 
@@ -477,8 +477,8 @@ filterBtns.forEach(btn => {
     displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
     }
     else {
-      sectionCenter.innerHTML = `<p style="font-size:20pt;font-weight:bold;margin-left: 50%;">No items are picked. Please click 'Show All' and choose items!</p>`
-
+      messageArea.innerHTML = `<p style="font-size:20pt;font-weight:bold;\">No items are picked. Please click 'Show All' and choose items!</p>`
+      sectionCenter.innerHTML = "";
 
     }
   }
