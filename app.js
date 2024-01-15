@@ -407,6 +407,9 @@ function displayAMenu(menuItems) {
   
 }
 
+// function displayMessage(msg) {
+//   sectionCenter.innerHTML =
+// }
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -470,7 +473,14 @@ filterBtns.forEach(btn => {
   console.log(filteredMenu);
 
   if (targetTop === "picked") {
+    if (localStorage.getItem('grandTotal')){
     displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
+    }
+    else {
+      sectionCenter.innerHTML = "No items are picked. Please click 'Show All' and choose items!"
+
+
+    }
   }
  else if (targetTop === "all") {
   //displayAMenu(pickedArray);
@@ -480,10 +490,10 @@ filterBtns.forEach(btn => {
  
  }
 
-//  else{
-//   localStorage.clear();
+else{
+   localStorage.clear();
 //   location.reload();
-//  }
+}
   })
 })
 
