@@ -1,5 +1,13 @@
 const menu = [
   {
+    id: 0,
+    title: "Gas",
+    status: "all",
+    price: 15.99,
+    img: "./images/258s.png",
+    desc: `gas`,
+  },
+  {
     id: 1,
     title: "Apples",
     status: "all",
