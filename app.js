@@ -385,6 +385,9 @@ const sectionCenter = document.querySelector(".section-center");
 const filterBtns = document.querySelectorAll(".filter-btn");
 console.log(filterBtns);
 
+let counter = 0; //if LS is empty, counter var is the result of the clicks (choose item initially)
+let runningGrand; //if LS has grandTotal, runningGrand inherits grandTotal's value, adds the result of the clicks, then sets grandTotal's value to runningGrand  
+let grandTotal;
 
 
 function displayAMenu(menuItems) {
@@ -407,7 +410,8 @@ function displayAMenu(menuItems) {
 
 
 window.addEventListener("DOMContentLoaded", () => {
-
+  
+  //localStorage.clear();
   
   console.log("shake bake");
   displayAMenu(menu);
@@ -424,7 +428,25 @@ window.addEventListener("DOMContentLoaded", () => {
    menu.filter(item =>{
       console.log(item.title);
       if (item.title === target){
+        console.log(item);
         pickedArray.push(item);
+        console.log(pickedArray);
+        if (localStorage.getItem('grandTotal')) {//if local storage filled with grandTotal
+          runningGrand = JSON.parse(localStorage.getItem('grandTotal'));
+          runningGrand.push(item);
+          localStorage.setItem('grandTotal', JSON.stringify(runningGrand));
+          //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
+      }
+      else { //local storage is empty
+          //counter = item;
+          // localStorage.setItem('total', JSON.stringify(item));
+          // grandTotal = JSON.parse(localStorage.getItem('total'));
+          // console.log(grandTotal);
+          localStorage.setItem('grandTotal', JSON.stringify(pickedArray)); // set LS grandTotal for the first time
+          //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
+      }
+       
+        //localStorage.setItem('picked', JSON.stringify(pickedArray));
       }
     })
     console.log(pickedArray);
@@ -447,12 +469,21 @@ filterBtns.forEach(btn => {
   })
   console.log(filteredMenu);
 
-  if (targetTop === "all") {
-    location.reload();
+  if (targetTop === "picked") {
+    displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
   }
- else{
-  displayAMenu(pickedArray);
+ else if (targetTop === "all") {
+  //displayAMenu(pickedArray);
+  //console.log(JSON.parse(localStorage.getItem('picked')));
+  //sectionCenter.innerHTML = JSON.parse(localStorage.getItem('picked'));
+  location.reload();
+ 
  }
+
+//  else{
+//   localStorage.clear();
+//   location.reload();
+//  }
   })
 })
 
