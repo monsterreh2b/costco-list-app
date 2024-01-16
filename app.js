@@ -402,6 +402,7 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 console.log(filterBtns);
 
 let counter = 0; //if LS is empty, counter var is the result of the clicks (choose item initially)
+let counterGrand;
 let runningGrand; //if LS has grandTotal, runningGrand inherits grandTotal's value, adds the result of the clicks, then sets grandTotal's value to runningGrand  
 let grandTotal;
 
@@ -464,6 +465,7 @@ window.addEventListener("DOMContentLoaded", () => {
           // grandTotal = JSON.parse(localStorage.getItem('total'));
           // console.log(grandTotal);
           localStorage.setItem('grandTotal', JSON.stringify(pickedArray)); // set LS grandTotal for the first time
+          
           //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
       }
        
