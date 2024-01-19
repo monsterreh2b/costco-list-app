@@ -399,6 +399,7 @@ const pickedArray = [];
 const sectionCenter = document.querySelector(".section-center");
 const messageArea = document.querySelector(".message");
 const filterBtns = document.querySelectorAll(".filter-btn");
+const showCount = document.querySelectorAll(".show-count");
 console.log(filterBtns);
 
 let counter = 0; //if LS is empty, counter var is the result of the clicks (choose item initially)
@@ -406,14 +407,19 @@ let counterGrand;
 let runningGrand; //if LS has grandTotal, runningGrand inherits grandTotal's value, adds the result of the clicks, then sets grandTotal's value to runningGrand  
 let grandTotal;
 
+let countItems = 1;
+
 
 function displayAMenu(menuItems) {
+
+  showCount.innerHTML = "Costco List" + "(" + countItems + ")";
   const displayMenu = menuItems.map(item => {
     console.log(item);
     //removed price element after item title <h4 class="price">$${item.price}</h4>
     return `<article class="menu-item"><img src="${item.img}" alt="${item.title}" class="photo" /><div class="item-info"><header><h4>${item.title}</h4></header><p class="item-text">${item.desc}</p><a href="#quick">Top</a><br/><a href="#quickBottom">Bottom</a></div></article>`
   })
   console.log(displayMenu.join(""));
+  //showCount.innerHTML = "Costco List" + "(" + countItems + ")";
   sectionCenter.innerHTML = displayMenu.join("");
 
   //console.log(menuItems);
@@ -455,9 +461,15 @@ window.addEventListener("DOMContentLoaded", () => {
         console.log(pickedArray);
         if (localStorage.getItem('grandTotal')) {//if local storage filled with grandTotal
           runningGrand = JSON.parse(localStorage.getItem('grandTotal'));
+          countItems = JSON.parse(localStorage.getItem('countItems'));
+          console.log(countItems);
           runningGrand.push(item);
           localStorage.setItem('grandTotal', JSON.stringify(runningGrand));
           //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
+          countItems++;
+          
+          console.log(countItems);
+          
       }
       else { //local storage is empty
           //counter = item;
@@ -465,6 +477,7 @@ window.addEventListener("DOMContentLoaded", () => {
           // grandTotal = JSON.parse(localStorage.getItem('total'));
           // console.log(grandTotal);
           localStorage.setItem('grandTotal', JSON.stringify(pickedArray)); // set LS grandTotal for the first time
+          localStorage.setItem('countItems', JSON.stringify(countItems++));
           
           //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
       }
@@ -495,6 +508,8 @@ filterBtns.forEach(btn => {
   if (targetTop === "picked") {
     if (localStorage.getItem('grandTotal')){
     displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
+   //showCount.innerHTML = countItems;
+
     }
     else {
       messageArea.innerHTML = `<p style="font-size:20pt;font-weight:bold;\">No items are picked. Please click 'Show All' and choose items!</p>`
