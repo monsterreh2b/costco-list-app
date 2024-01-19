@@ -42,7 +42,7 @@ Variables
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
-  --clr-gold: #c59d5f;
+  --clr-gold: #e41134;
   --clr-black: #222;
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
@@ -113,6 +113,27 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
+
+span.costco {
+  color: #e41134;
+}
+
+span#picky {
+  background: #005dac;
+  color: white;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 4px;
+}
+
+.pickyColored {
+  background: #005dac;
+  color: white;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 3px;
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -242,6 +263,8 @@ Menu
   margin-bottom: 0;
   padding-top: 1rem;
 }
+
+
 
 @media screen and (min-width: 768px) {
   .menu-item {

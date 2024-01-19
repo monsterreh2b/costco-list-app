@@ -394,12 +394,14 @@ const menu = [
   
 ];
 
-const pickedArray = [];
+let pickedArray = [];
 
 const sectionCenter = document.querySelector(".section-center");
 const messageArea = document.querySelector(".message");
 const filterBtns = document.querySelectorAll(".filter-btn");
 const showCount = document.querySelectorAll(".show-count");
+const picky = document.querySelector(".picky");
+
 console.log(filterBtns);
 
 let counter = 0; //if LS is empty, counter var is the result of the clicks (choose item initially)
@@ -408,6 +410,12 @@ let runningGrand; //if LS has grandTotal, runningGrand inherits grandTotal's val
 let grandTotal;
 
 let countItems = 1;
+let countItemsGrand;
+
+let countPicks;
+let countPicksGrand;
+
+
 
 
 function displayAMenu(menuItems) {
@@ -456,15 +464,22 @@ window.addEventListener("DOMContentLoaded", () => {
    menu.filter(item =>{
       console.log(item.title);
       if (item.title === target){
+        counter = counter + 1;
+        console.log(counter);
         console.log(item);
         pickedArray.push(item);
         console.log(pickedArray);
+
+        console.log(pickedArray.length + 1);
+        
+
         if (localStorage.getItem('grandTotal')) {//if local storage filled with grandTotal
           runningGrand = JSON.parse(localStorage.getItem('grandTotal'));
-          countItems = JSON.parse(localStorage.getItem('countItems'));
+        
           console.log(countItems);
           runningGrand.push(item);
           localStorage.setItem('grandTotal', JSON.stringify(runningGrand));
+        
           //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
           countItems++;
           
@@ -477,15 +492,30 @@ window.addEventListener("DOMContentLoaded", () => {
           // grandTotal = JSON.parse(localStorage.getItem('total'));
           // console.log(grandTotal);
           localStorage.setItem('grandTotal', JSON.stringify(pickedArray)); // set LS grandTotal for the first time
-          localStorage.setItem('countItems', JSON.stringify(countItems++));
+          
           
           //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
       }
-       
+
+      if (localStorage.getItem('countPicksGrand')) {//if local storage filled with countPicksGrand
+        countPicks =  JSON.parse(localStorage.getItem('countPicksGrand'));
+        countPicks = countPicks + 1;
+        localStorage.setItem('countPicksGrand', JSON.stringify(countPicks));
+      }
+      else { //local storage is empty 
+        localStorage.setItem('countPicksGrand', JSON.stringify(pickedArray.length));
+      }
+
+     
         //localStorage.setItem('picked', JSON.stringify(pickedArray));
       }
     })
     console.log(pickedArray);
+    console.log(pickedArray.length);
+   
+
+     
+    
     })
   });
 })
@@ -507,18 +537,24 @@ filterBtns.forEach(btn => {
 
   if (targetTop === "picked") {
     if (localStorage.getItem('grandTotal')){
+    console.log(countItems);
+    countItemsGrand = countItemsGrand + countItems;
+    console.log(countItemsGrand);
+
     displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
    //showCount.innerHTML = countItems;
-
+    picky.innerHTML =  JSON.parse(localStorage.getItem('countPicksGrand'));
+    picky.classList.toggle("pickyColored");
     }
     else {
+      console.log(countItems);
       messageArea.innerHTML = `<p style="font-size:20pt;font-weight:bold;\">No items are picked. Please click 'Show All' and choose items!</p>`
       sectionCenter.innerHTML = "";
 
     }
   }
  else if (targetTop === "all") {
-  //displayAMenu(pickedArray);
+  //displayAMenu(menu);
   //console.log(JSON.parse(localStorage.getItem('picked')));
   //sectionCenter.innerHTML = JSON.parse(localStorage.getItem('picked'));
   location.reload();
@@ -528,6 +564,8 @@ filterBtns.forEach(btn => {
 else{
    localStorage.clear();
 //   location.reload();
+picky.innerHTML = "";
+picky.classList.remove("pickyColored");
 }
   })
 })
