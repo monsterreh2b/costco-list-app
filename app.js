@@ -391,6 +391,14 @@ const menu = [
     img: "./images/bunch-bananas-isolated-on-white-600nw-1722111529.png",
     desc: `banana`,
   },
+  {
+    id: 49,
+    title: "Pantene",
+    status: "all",
+    price: 16.99,
+    img: "./images/pantene.png",
+    desc: `pantene`,
+  },
   
 ];
 
