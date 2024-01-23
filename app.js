@@ -399,6 +399,38 @@ const menu = [
     img: "./images/pantene.png",
     desc: `pantene`,
   },
+  {
+    id: 50,
+    title: "Nexxus",
+    status: "all",
+    price: 16.99,
+    img: "./images/nexxus.png",
+    desc: `nexxus`,
+  },
+  {
+    id: 51,
+    title: "Turmeric",
+    status: "all",
+    price: 16.99,
+    img: "./images/turmeric.png",
+    desc: `turmeric`,
+  },
+  {
+    id: 52,
+    title: "Tofu",
+    status: "all",
+    price: 16.99,
+    img: "./images/tofu.png",
+    desc: `tofu`,
+  },
+  {
+    id: 53,
+    title: "Johnny pop",
+    status: "all",
+    price: 16.99,
+    img: "./images/johnny pop.png",
+    desc: `johnny pop`,
+  },
   
 ];
 
