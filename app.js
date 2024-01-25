@@ -464,7 +464,7 @@ function displayAMenu(menuItems) {
   const displayMenu = menuItems.map(item => {
     console.log(item);
     //removed price element after item title <h4 class="price">$${item.price}</h4>
-    return `<article class="menu-item"><img src="${item.img}" alt="${item.title}" class="photo" /><div class="item-info"><header><h4>${item.title}</h4></header><p class="item-text">${item.desc}</p><a href="#quick">Top</a><br/><a href="#quickBottom">Bottom</a></div></article>`
+    return `<article class="menu-item"><img src="${item.img}" alt="${item.title}" data-key="${item.id}" class="photo" /><div class="item-info"><header><h4>${item.title}</h4></header><p class="item-text">${item.desc}</p><a href="#quick">Top</a><br/><a href="#quickBottom">Bottom</a></div></article>`
   })
   console.log(displayMenu.join(""));
   //showCount.innerHTML = "Costco List" + "(" + countItems + ")";
@@ -585,6 +585,43 @@ filterBtns.forEach(btn => {
    //showCount.innerHTML = countItems;
     picky.innerHTML =  JSON.parse(localStorage.getItem('countPicksGrand'));
     picky.classList.toggle("pickyColored");
+
+    const pickedItems = document.querySelectorAll(".menu-item");
+
+pickedItems.forEach(item => {
+    console.log(item);
+
+   
+    item.addEventListener("click", (e) => {
+      console.log(e.target.dataset.key);
+   //e.currentTarget.classList.add("dnone");
+   if (localStorage.getItem('grandTotal')) {//if local storage filled with grandTotal
+    const pickedItems = JSON.parse(localStorage.getItem('grandTotal'));
+    console.log(pickedItems);
+    const pickedItemsRemaining = pickedItems.filter(item =>{
+      // console.log(item.id);
+      // if (item.id === e.target.dataset.key) {
+      // pickedItems.splice(2, 1);
+      
+      //  }
+      return item.id != e.target.dataset.key;
+    })
+    console.log(pickedItemsRemaining);
+    localStorage.setItem('grandTotal', JSON.stringify(pickedItemsRemaining));
+    displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
+  
+    //console.log(pickedItemsRemaining);
+   }
+
+   if (localStorage.getItem('countPicksGrand')) {//if local storage filled with countPicksGrand
+    countPicks =  JSON.parse(localStorage.getItem('countPicksGrand'));
+    countPicks = countPicks - 1;
+    localStorage.setItem('countPicksGrand', JSON.stringify(countPicks));
+    picky.innerHTML =  JSON.parse(localStorage.getItem('countPicksGrand'));
+  }
+   
+})
+})
     }
     else {
       console.log(countItems);
