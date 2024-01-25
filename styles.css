@@ -264,6 +264,9 @@ Menu
   padding-top: 1rem;
 }
 
+.dnone {
+  display: none;
+}
 
 
 @media screen and (min-width: 768px) {
