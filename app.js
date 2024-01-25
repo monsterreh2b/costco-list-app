@@ -577,9 +577,9 @@ filterBtns.forEach(btn => {
 
   if (targetTop === "picked") {
     if (localStorage.getItem('grandTotal')){
-    console.log(countItems);
-    countItemsGrand = countItemsGrand + countItems;
-    console.log(countItemsGrand);
+    // console.log(countItems);
+    // countItemsGrand = countItemsGrand + countItems;
+    // console.log(countItemsGrand);
 
     displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
    //showCount.innerHTML = countItems;
@@ -619,6 +619,7 @@ pickedItems.forEach(item => {
     localStorage.setItem('countPicksGrand', JSON.stringify(countPicks));
     picky.innerHTML =  JSON.parse(localStorage.getItem('countPicksGrand'));
   }
+  
    
 })
 })
