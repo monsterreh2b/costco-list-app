@@ -594,11 +594,12 @@ pickedItems.forEach(item => {
    
     item.addEventListener("click", (e) => {
       console.log(e.target.dataset.key);
+      console.log(e.currentTarget.dataset.key);
    //e.currentTarget.classList.add("dnone");
    if (localStorage.getItem('grandTotal')) {//if local storage filled with grandTotal
-    const pickedItems = JSON.parse(localStorage.getItem('grandTotal'));
-    console.log(pickedItems);
-    const pickedItemsRemaining = pickedItems.filter(item =>{
+    const pickedItemsGrand = JSON.parse(localStorage.getItem('grandTotal'));
+    console.log(pickedItemsGrand);
+    const pickedItemsRemaining = pickedItemsGrand.filter(item =>{
       // console.log(item.id);
       // if (item.id === e.target.dataset.key) {
       // pickedItems.splice(2, 1);
@@ -608,10 +609,12 @@ pickedItems.forEach(item => {
     })
     console.log(pickedItemsRemaining);
     localStorage.setItem('grandTotal', JSON.stringify(pickedItemsRemaining));
-    displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
+    
   
     //console.log(pickedItemsRemaining);
    }
+
+   displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
 
    if (localStorage.getItem('countPicksGrand')) {//if local storage filled with countPicksGrand
     countPicks =  JSON.parse(localStorage.getItem('countPicksGrand'));
