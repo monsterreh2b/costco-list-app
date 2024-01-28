@@ -431,6 +431,14 @@ const menu = [
     img: "./images/johnny pop.png",
     desc: `johnny pop`,
   },
+  {
+    id: 54,
+    title: "Beef Jerky",
+    status: "all",
+    price: 16.99,
+    img: "./images/jerky.png",
+    desc: `jerky`,
+  },
   
 ];
 
