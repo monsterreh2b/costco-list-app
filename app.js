@@ -409,14 +409,6 @@ const menu = [
   },
   {
     id: 51,
-    title: "Turmeric",
-    status: "all",
-    price: 16.99,
-    img: "./images/turmeric.png",
-    desc: `turmeric`,
-  },
-  {
-    id: 52,
     title: "Tofu",
     status: "all",
     price: 16.99,
@@ -424,7 +416,7 @@ const menu = [
     desc: `tofu`,
   },
   {
-    id: 53,
+    id: 52,
     title: "Johnny pop",
     status: "all",
     price: 16.99,
@@ -432,7 +424,7 @@ const menu = [
     desc: `johnny pop`,
   },
   {
-    id: 54,
+    id: 53,
     title: "Beef Jerky",
     status: "all",
     price: 16.99,
