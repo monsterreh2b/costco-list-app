@@ -431,6 +431,14 @@ const menu = [
     img: "./images/jerky.png",
     desc: `jerky`,
   },
+  {
+    id: 54,
+    title: "Ketchup",
+    status: "all",
+    price: 16.99,
+    img: "./images/ketchup.png",
+    desc: `ketchup`,
+  },
   
 ];
 
