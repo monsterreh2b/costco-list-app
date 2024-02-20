@@ -439,6 +439,14 @@ const menu = [
     img: "./images/ketchup.png",
     desc: `ketchup`,
   },
+  {
+    id: 55,
+    title: "Amino",
+    status: "all",
+    price: 16.99,
+    img: "./images/amino.png",
+    desc: `amino`,
+  },
   
 ];
 
