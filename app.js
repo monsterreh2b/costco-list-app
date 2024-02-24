@@ -447,6 +447,14 @@ const menu = [
     img: "./images/amino.png",
     desc: `amino`,
   },
+  {
+    id: 56,
+    title: "Ham Steak",
+    status: "all",
+    price: 16.99,
+    img: "./images/hamsteak.png",
+    desc: `hamsteak`,
+  },
   
 ];
 
