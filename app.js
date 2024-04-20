@@ -479,6 +479,14 @@ const menu = [
     img: "./images/glucosamine.png",
     desc: `hglucosamine`,
   },
+  {
+    id: 60,
+    title: "Hydrogen Peroxide",
+    status: "all",
+    price: 16.99,
+    img: "./images/h202.png",
+    desc: `hh202`,
+  },
 
   
 ];
