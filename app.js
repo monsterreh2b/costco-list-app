@@ -487,6 +487,14 @@ const menu = [
     img: "./images/h202.png",
     desc: `hh202`,
   },
+  {
+    id: 61,
+    title: "Sabatinos Sausage",
+    status: "all",
+    price: 16.99,
+    img: "./images/sabatino.png",
+    desc: `sabatino`,
+  },
 
   
 ];
