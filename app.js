@@ -495,6 +495,22 @@ const menu = [
     img: "./images/sabatino.png",
     desc: `sabatino`,
   },
+  {
+    id: 62,
+    title: "Frozen Chicken Sausage",
+    status: "all",
+    price: 16.99,
+    img: "./images/chicken-sausage.png",
+    desc: `chicken-sausage`,
+  },
+  {
+    id: 63,
+    title: "Fried Rice",
+    status: "all",
+    price: 16.99,
+    img: "./images/fried-rice.png",
+    desc: `fried-rice`,
+  },
 
   
 ];
