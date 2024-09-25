@@ -527,7 +527,23 @@ const menu = [
     price: 16.99,
     img: "./images/pizza.png",
     desc: `pizza`,
-  }
+  },
+  {
+    id: 66,
+    title: "Lil Critters",
+    status: "all",
+    price: 16.99,
+    img: "./images/lil-critters.png",
+    desc: `lil-critters`,
+  },
+  {
+    id: 67,
+    title: "Multivitamin",
+    status: "all",
+    price: 16.99,
+    img: "./images/multivitamin.png",
+    desc: `multivitamin`,
+  },
 
   
 ];
