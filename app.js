@@ -317,7 +317,7 @@ const menu = [
     status: "all",
     price: 16.99,
     img: "./images/soap.png",
-    desc: `soap bars`,
+    desc: `soap`,
   },
   {
     id: 40,
@@ -325,7 +325,7 @@ const menu = [
     status: "all",
     price: 16.99,
     img: "./images/soba.png",
-    desc: `soba noodle packets`,
+    desc: `soba`,
   },
   {
     id: 41,
@@ -333,7 +333,7 @@ const menu = [
     status: "all",
     price: 16.99,
     img: "./images/strawberry.png",
-    desc: `Strawberry`,
+    desc: `strawberry`,
   },
   {
     id: 42,
@@ -365,7 +365,7 @@ const menu = [
     status: "all",
     price: 16.99,
     img: "./images/trash.png",
-    desc: `trash bags`,
+    desc: `trash`,
   },
   {
     id: 46,
@@ -380,7 +380,7 @@ const menu = [
     title: "Zipfizz",
     status: "all",
     price: 16.99,
-    img: "./images/zpfz.png",
+    img: "./images/zipfz.png",
     desc: `zipfz`,
   },
   {
@@ -388,7 +388,7 @@ const menu = [
     title: "Banana",
     status: "all",
     price: 16.99,
-    img: "./images/bunch-bananas-isolated-on-white-600nw-1722111529.png",
+    img: "./images/banana.png",
     desc: `banana`,
   },
   {
@@ -477,7 +477,7 @@ const menu = [
     status: "all",
     price: 16.99,
     img: "./images/glucosamine.png",
-    desc: `hglucosamine`,
+    desc: `glucosamine`,
   },
   {
     id: 60,
@@ -511,6 +511,23 @@ const menu = [
     img: "./images/fried-rice.png",
     desc: `fried-rice`,
   },
+  {
+    id: 64,
+    title: "Nasal Spray",
+    status: "all",
+    price: 16.99,
+    img: "./images/nasal-spray.png",
+    desc: `nasal-spray`,
+  },
+
+  {
+    id: 65,
+    title: "Pizza",
+    status: "all",
+    price: 16.99,
+    img: "./images/pizza.png",
+    desc: `pizza`,
+  }
 
   
 ];
