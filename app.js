@@ -380,7 +380,7 @@ const menu = [
     title: "Zipfizz",
     status: "all",
     price: 16.99,
-    img: "./images/zipfz.png",
+    img: "./images/zpfz.png",
     desc: `zipfz`,
   },
   {
@@ -388,7 +388,7 @@ const menu = [
     title: "Banana",
     status: "all",
     price: 16.99,
-    img: "./images/banana.png",
+    img: "./images/bunch-bananas-isolated-on-white-600nw-1722111529.png",
     desc: `banana`,
   },
   {
