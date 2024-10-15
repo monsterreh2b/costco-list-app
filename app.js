@@ -544,6 +544,30 @@ const menu = [
     img: "./images/multivitamin.png",
     desc: `multivitamin`,
   },
+  {
+    id: 67,
+    title: "Toilet paper",
+    status: "all",
+    price: 16.99,
+    img: "./images/toilet paper.png",
+    desc: `toilet paper`,
+  },
+  {
+    id: 67,
+    title: "Nyquil",
+    status: "all",
+    price: 16.99,
+    img: "./images/nyquil.png",
+    desc: `mnyquil`,
+  },
+  {
+    id: 67,
+    title: "Kleenex",
+    status: "all",
+    price: 16.99,
+    img: "./images/kleenex.png",
+    desc: `kleenex`,
+  },
 
   
 ];
