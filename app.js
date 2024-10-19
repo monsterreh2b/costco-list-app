@@ -568,6 +568,15 @@ const menu = [
     img: "./images/kleenex.png",
     desc: `kleenex`,
   },
+  {
+    id: 68,
+    title: "Shirt",
+    status: "all",
+    price: 16.99,
+    img: "./images/shirt.png",
+    desc: `shirt`,
+  },
+
 
   
 ];
