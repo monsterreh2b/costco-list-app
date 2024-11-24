@@ -576,6 +576,22 @@ const menu = [
     img: "./images/shirt.png",
     desc: `shirt`,
   },
+  {
+    id: 69,
+    title: "Fish Oil",
+    status: "all",
+    price: 16.99,
+    img: "./images/fish oil.png",
+    desc: `fish oil`,
+  },
+  {
+    id: 70,
+    title: "Tortilla Chips",
+    status: "all",
+    price: 16.99,
+    img: "./images/tortilla chips.png",
+    desc: `tortilla chips`,
+  },
 
 
   
