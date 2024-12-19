@@ -592,6 +592,14 @@ const menu = [
     img: "./images/tortilla chips.png",
     desc: `tortilla chips`,
   },
+  {
+    id: 71,
+    title: "Ribs",
+    status: "all",
+    price: 16.99,
+    img: "./images/ribs.png",
+    desc: `ribs`,
+  },
 
 
   
