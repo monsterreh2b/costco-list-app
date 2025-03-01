@@ -600,9 +600,14 @@ const menu = [
     img: "./images/ribs.png",
     desc: `ribs`,
   },
-
-
-  
+  {
+    id: 72,
+    title: "Uber",
+    status: "all",
+    price: 16.99,
+    img: "./images/uber.png",
+    desc: `uber`,
+  },
 ];
 
 let pickedArray = [];
@@ -617,7 +622,7 @@ console.log(filterBtns);
 
 let counter = 0; //if LS is empty, counter var is the result of the clicks (choose item initially)
 let counterGrand;
-let runningGrand; //if LS has grandTotal, runningGrand inherits grandTotal's value, adds the result of the clicks, then sets grandTotal's value to runningGrand  
+let runningGrand; //if LS has grandTotal, runningGrand inherits grandTotal's value, adds the result of the clicks, then sets grandTotal's value to runningGrand
 let grandTotal;
 
 let countItems = 1;
@@ -626,17 +631,13 @@ let countItemsGrand;
 let countPicks;
 let countPicksGrand;
 
-
-
-
 function displayAMenu(menuItems) {
-
   showCount.innerHTML = "Costco List" + "(" + countItems + ")";
-  const displayMenu = menuItems.map(item => {
+  const displayMenu = menuItems.map((item) => {
     console.log(item);
     //removed price element after item title <h4 class="price">$${item.price}</h4>
-    return `<article class="menu-item"><img src="${item.img}" alt="${item.title}" data-key="${item.id}" class="photo" /><div class="item-info"><header><h4>${item.title}</h4></header><p class="item-text">${item.desc}</p><a href="#quick">Top</a><br/><a href="#quickBottom">Bottom</a></div></article>`
-  })
+    return `<article class="menu-item"><img src="${item.img}" alt="${item.title}" data-key="${item.id}" class="photo" /><div class="item-info"><header><h4>${item.title}</h4></header><p class="item-text">${item.desc}</p><a href="#quick">Top</a><br/><a href="#quickBottom">Bottom</a></div></article>`;
+  });
   console.log(displayMenu.join(""));
   //showCount.innerHTML = "Costco List" + "(" + countItems + ")";
   sectionCenter.innerHTML = displayMenu.join("");
@@ -647,179 +648,171 @@ function displayAMenu(menuItems) {
   //   console.log(e.currentTarget);
   //   });
   // })
-  
 }
 
 // function displayMessage(msg) {
 //   sectionCenter.innerHTML =
 // }
 
-
 window.addEventListener("DOMContentLoaded", () => {
-  
   //localStorage.clear();
-  
+
   console.log("shake bake");
   displayAMenu(menu);
 
   const menuItems = document.querySelectorAll(".photo");
-  menuItems.forEach(item => {
+  menuItems.forEach((item) => {
     console.log(item);
 
     //for each menu item, grab the child of menu-item's  (img) alt value, and create
     //the attribute "data-key" then the value "alt value"
     item.addEventListener("click", (e) => {
-    const target = e.currentTarget.getAttribute("alt");
-    console.log(target);
-   e.currentTarget.classList.add("shimmer");
-   menu.filter(item =>{
-      console.log(item.title);
-      if (item.title === target){
-        counter = counter + 1;
-        console.log(counter);
-        console.log(item);
-        pickedArray.push(item);
-        console.log(pickedArray);
+      const target = e.currentTarget.getAttribute("alt");
+      console.log(target);
+      e.currentTarget.classList.add("shimmer");
+      menu.filter((item) => {
+        console.log(item.title);
+        if (item.title === target) {
+          counter = counter + 1;
+          console.log(counter);
+          console.log(item);
+          pickedArray.push(item);
+          console.log(pickedArray);
 
-        console.log(pickedArray.length + 1);
-        
+          console.log(pickedArray.length + 1);
 
-        if (localStorage.getItem('grandTotal')) {//if local storage filled with grandTotal
-          runningGrand = JSON.parse(localStorage.getItem('grandTotal'));
-        
-          console.log(countItems);
-          runningGrand.push(item);
-          localStorage.setItem('grandTotal', JSON.stringify(runningGrand));
-        
-          //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
-          countItems++;
-          
-          console.log(countItems);
-          
-      }
-      else { //local storage is empty
-          //counter = item;
-          // localStorage.setItem('total', JSON.stringify(item));
-          // grandTotal = JSON.parse(localStorage.getItem('total'));
-          // console.log(grandTotal);
-          localStorage.setItem('grandTotal', JSON.stringify(pickedArray)); // set LS grandTotal for the first time
-          
-          
-          //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
-      }
+          if (localStorage.getItem("grandTotal")) {
+            //if local storage filled with grandTotal
+            runningGrand = JSON.parse(localStorage.getItem("grandTotal"));
 
-      if (localStorage.getItem('countPicksGrand')) {//if local storage filled with countPicksGrand
-        countPicks =  JSON.parse(localStorage.getItem('countPicksGrand'));
-        countPicks = countPicks + 1;
-        localStorage.setItem('countPicksGrand', JSON.stringify(countPicks));
-      }
-      else { //local storage is empty 
-        localStorage.setItem('countPicksGrand', JSON.stringify(pickedArray.length));
-      }
+            console.log(countItems);
+            runningGrand.push(item);
+            localStorage.setItem("grandTotal", JSON.stringify(runningGrand));
 
-     
-        //localStorage.setItem('picked', JSON.stringify(pickedArray));
-      }
-    })
-    console.log(pickedArray);
-    console.log(pickedArray.length);
-   
+            //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
+            countItems++;
 
-     
-    
-    })
+            console.log(countItems);
+          } else {
+            //local storage is empty
+            //counter = item;
+            // localStorage.setItem('total', JSON.stringify(item));
+            // grandTotal = JSON.parse(localStorage.getItem('total'));
+            // console.log(grandTotal);
+            localStorage.setItem("grandTotal", JSON.stringify(pickedArray)); // set LS grandTotal for the first time
+
+            //scorey.innerHTML = JSON.parse(localStorage.getItem('grandTotal'));
+          }
+
+          if (localStorage.getItem("countPicksGrand")) {
+            //if local storage filled with countPicksGrand
+            countPicks = JSON.parse(localStorage.getItem("countPicksGrand"));
+            countPicks = countPicks + 1;
+            localStorage.setItem("countPicksGrand", JSON.stringify(countPicks));
+          } else {
+            //local storage is empty
+            localStorage.setItem(
+              "countPicksGrand",
+              JSON.stringify(pickedArray.length)
+            );
+          }
+
+          //localStorage.setItem('picked', JSON.stringify(pickedArray));
+        }
+      });
+      console.log(pickedArray);
+      console.log(pickedArray.length);
+    });
   });
-})
+});
 
-
-
-filterBtns.forEach(btn => {
+filterBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-  console.log(e.currentTarget.dataset.key);
-  const targetTop = e.currentTarget.dataset.key;
+    console.log(e.currentTarget.dataset.key);
+    const targetTop = e.currentTarget.dataset.key;
 
-  const filteredMenu = menu.filter(item => {
-    console.log(item.status);
-    if (item.status === targetTop) {
-    return item;
+    const filteredMenu = menu.filter((item) => {
+      console.log(item.status);
+      if (item.status === targetTop) {
+        return item;
+      }
+    });
+    console.log(filteredMenu);
+
+    if (targetTop === "picked") {
+      if (localStorage.getItem("grandTotal")) {
+        // console.log(countItems);
+        // countItemsGrand = countItemsGrand + countItems;
+        // console.log(countItemsGrand);
+
+        displayAMenu(JSON.parse(localStorage.getItem("grandTotal")));
+        //showCount.innerHTML = countItems;
+        picky.innerHTML = JSON.parse(localStorage.getItem("countPicksGrand"));
+        picky.classList.toggle("pickyColored");
+
+        const pickedItems = document.querySelectorAll(".menu-item");
+
+        pickedItems.forEach((item) => {
+          console.log(item);
+
+          item.addEventListener("click", (e) => {
+            console.log(e.target.dataset.key);
+            console.log(e.currentTarget.dataset.key);
+            //e.currentTarget.classList.add("dnone");
+            if (localStorage.getItem("grandTotal")) {
+              //if local storage filled with grandTotal
+              const pickedItemsGrand = JSON.parse(
+                localStorage.getItem("grandTotal")
+              );
+              console.log(pickedItemsGrand);
+              const pickedItemsRemaining = pickedItemsGrand.filter((item) => {
+                // console.log(item.id);
+                // if (item.id === e.target.dataset.key) {
+                // pickedItems.splice(2, 1);
+
+                //  }
+                return item.id != e.target.dataset.key;
+              });
+              console.log(pickedItemsRemaining);
+              localStorage.setItem(
+                "grandTotal",
+                JSON.stringify(pickedItemsRemaining)
+              );
+
+              //console.log(pickedItemsRemaining);
+            }
+
+            displayAMenu(JSON.parse(localStorage.getItem("grandTotal")));
+
+            if (localStorage.getItem("countPicksGrand")) {
+              //if local storage filled with countPicksGrand
+              countPicks = JSON.parse(localStorage.getItem("countPicksGrand"));
+              countPicks = countPicks - 1;
+              localStorage.setItem(
+                "countPicksGrand",
+                JSON.stringify(countPicks)
+              );
+              picky.innerHTML = JSON.parse(
+                localStorage.getItem("countPicksGrand")
+              );
+            }
+          });
+        });
+      } else {
+        console.log(countItems);
+        messageArea.innerHTML = `<p style="font-size:20pt;font-weight:bold;\">No items are picked. Please click 'Show All' and choose items!</p>`;
+        sectionCenter.innerHTML = "";
+      }
+    } else if (targetTop === "all") {
+      //displayAMenu(menu);
+      //console.log(JSON.parse(localStorage.getItem('picked')));
+      //sectionCenter.innerHTML = JSON.parse(localStorage.getItem('picked'));
+      location.reload();
+    } else {
+      localStorage.clear();
+      //   location.reload();
+      picky.innerHTML = "";
+      picky.classList.remove("pickyColored");
     }
-  })
-  console.log(filteredMenu);
-
-  if (targetTop === "picked") {
-    if (localStorage.getItem('grandTotal')){
-    // console.log(countItems);
-    // countItemsGrand = countItemsGrand + countItems;
-    // console.log(countItemsGrand);
-
-    displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
-   //showCount.innerHTML = countItems;
-    picky.innerHTML =  JSON.parse(localStorage.getItem('countPicksGrand'));
-    picky.classList.toggle("pickyColored");
-
-    const pickedItems = document.querySelectorAll(".menu-item");
-
-pickedItems.forEach(item => {
-    console.log(item);
-
-   
-    item.addEventListener("click", (e) => {
-      console.log(e.target.dataset.key);
-      console.log(e.currentTarget.dataset.key);
-   //e.currentTarget.classList.add("dnone");
-   if (localStorage.getItem('grandTotal')) {//if local storage filled with grandTotal
-    const pickedItemsGrand = JSON.parse(localStorage.getItem('grandTotal'));
-    console.log(pickedItemsGrand);
-    const pickedItemsRemaining = pickedItemsGrand.filter(item =>{
-      // console.log(item.id);
-      // if (item.id === e.target.dataset.key) {
-      // pickedItems.splice(2, 1);
-      
-      //  }
-      return item.id != e.target.dataset.key;
-    })
-    console.log(pickedItemsRemaining);
-    localStorage.setItem('grandTotal', JSON.stringify(pickedItemsRemaining));
-    
-  
-    //console.log(pickedItemsRemaining);
-   }
-
-   displayAMenu((JSON.parse(localStorage.getItem('grandTotal'))));
-
-   if (localStorage.getItem('countPicksGrand')) {//if local storage filled with countPicksGrand
-    countPicks =  JSON.parse(localStorage.getItem('countPicksGrand'));
-    countPicks = countPicks - 1;
-    localStorage.setItem('countPicksGrand', JSON.stringify(countPicks));
-    picky.innerHTML =  JSON.parse(localStorage.getItem('countPicksGrand'));
-  }
-  
-   
-})
-})
-    }
-    else {
-      console.log(countItems);
-      messageArea.innerHTML = `<p style="font-size:20pt;font-weight:bold;\">No items are picked. Please click 'Show All' and choose items!</p>`
-      sectionCenter.innerHTML = "";
-
-    }
-  }
- else if (targetTop === "all") {
-  //displayAMenu(menu);
-  //console.log(JSON.parse(localStorage.getItem('picked')));
-  //sectionCenter.innerHTML = JSON.parse(localStorage.getItem('picked'));
-  location.reload();
- 
- }
-
-else{
-   localStorage.clear();
-//   location.reload();
-picky.innerHTML = "";
-picky.classList.remove("pickyColored");
-}
-  })
-})
-
-
+  });
+});
