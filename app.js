@@ -608,6 +608,22 @@ const menu = [
     img: "./images/uber.png",
     desc: `uber`,
   },
+  {
+    id: 73,
+    title: "Boulder Chips",
+    status: "all",
+    price: 16.99,
+    img: "./images/boulder.png",
+    desc: `boulder`,
+  },
+  {
+    id: 74,
+    title: "Taquitos",
+    status: "all",
+    price: 16.99,
+    img: "./images/taquitos.png",
+    desc: `taquitos`,
+  },
 ];
 
 let pickedArray = [];
