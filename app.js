@@ -624,6 +624,14 @@ const menu = [
     img: "./images/taquitos.png",
     desc: `taquitos`,
   },
+  {
+    id: 75,
+    title: "Pellegrino",
+    status: "all",
+    price: 16.99,
+    img: "./images/pellegrino.png",
+    desc: `pellegrino`,
+  },
 ];
 
 let pickedArray = [];
