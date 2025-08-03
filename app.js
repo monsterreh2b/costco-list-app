@@ -632,6 +632,14 @@ const menu = [
     img: "./images/pellegrino.png",
     desc: `pellegrino`,
   },
+  {
+    id: 75,
+    title: "Therabreath",
+    status: "all",
+    price: 16.99,
+    img: "./images/therabreath.png",
+    desc: `therabreath`,
+  },
 ];
 
 let pickedArray = [];
